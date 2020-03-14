@@ -1,6 +1,14 @@
 class PortfoliosController < ApplicationController
   def index
+    #Portoflio.all returns all the portfolios
+    #Portoflio.where(subtitle: 'Angular') would return only Angular items
+    #Instead of having Portoflio.where(subtitle: 'Angular') we can do it in the Portfolios class directly and use
+    #only .angular in the controller
     @portfolio_items = Portfolio.all
+  end
+
+  def angular
+    @angular_portfolio_items = Portfolio.angular
   end
 
   def new
