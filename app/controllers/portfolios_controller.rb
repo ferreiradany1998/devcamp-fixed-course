@@ -1,10 +1,19 @@
 class PortfoliosController < ApplicationController
   def index
+    #Portoflio.all returns all the portfolios
+    #Portoflio.where(subtitle: 'Angular') would return only Angular items
+    #Instead of having Portoflio.where(subtitle: 'Angular') we can do it in the Portfolios class directly and use
+    #only .angular in the controller
     @portfolio_items = Portfolio.all
+  end
+
+  def angular
+    @angular_portfolio_items = Portfolio.angular
   end
 
   def new
     @portfolio_item = Portfolio.new
+    3.times { @portfolio_item.technologies.build }
   end
 
   def edit
@@ -12,7 +21,7 @@ class PortfoliosController < ApplicationController
   end
 
   def create
-    @portfolio_item = Portfolio.new(params.require(:portfolio).permit(:title, :subtitle, :body))
+    @portfolio_item = Portfolio.new(params.require(:portfolio).permit(:title, :subtitle, :body, technologies_attributes: [:name]))
 
     respond_to do |format|
       if @portfolio_item.save
