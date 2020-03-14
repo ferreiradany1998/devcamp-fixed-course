@@ -10,12 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_14_141310) do
+ActiveRecord::Schema.define(version: 2020_03_14_150101) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  #to add the topic_id directly from console I typed: rails g migration add_topic_reference_to_blogs topic:references
   create_table "blogs", force: :cascade do |t|
     t.string "title"
     t.text "body"
@@ -55,6 +54,7 @@ ActiveRecord::Schema.define(version: 2020_03_14_141310) do
     t.integer "percent_utilized"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.text "badge"
   end
 
   create_table "topics", force: :cascade do |t|
