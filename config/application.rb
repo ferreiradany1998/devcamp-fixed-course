@@ -19,6 +19,9 @@ Bundler.require(*Rails.groups)
 
 module TutorialCourse
   class Application < Rails::Application
+    # If we want to acivate all parameters (not recommended)
+    #config.action_controller.permit_all_parameters = true
+    
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 5.2
 
