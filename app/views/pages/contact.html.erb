@@ -1,2 +1,11 @@
 <h1>Contact Page</h1>
 <p>Find me in app/views/pages/contact.html.erb</p>
+
+<!-- Format a number into a phone number -->
+<p><%= number_to_phone "0765590406" %></p>
+<!-- format a number into currency -->
+<p><%= number_to_currency "1500"%></p>
+<!-- format a number into percentage -->
+<p><%= number_to_percentage "80"%></p>
+<!-- format a number with a delimiter -->
+<p><%= number_with_delimiter "5153978126573812" %></p>
