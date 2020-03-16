@@ -29,8 +29,6 @@
     <%= render "shared/nav", location: 'bottom' %>
 
     <!-- this allows us to track the session source that came initially in the entire website -->
-    <% if session[:source] %>
-    <p>Thanks for visiting me from <%= session[:source] %></p>
-    <% end %>
+    <%= source_helper("blog") %>
   </body>
 </html>
