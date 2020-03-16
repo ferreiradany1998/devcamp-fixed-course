@@ -25,11 +25,14 @@
       <%= link_to "Register", new_user_registration_path %>
     <% end %>
 
+    <!-- To use partials we must use render -->
+    <!-- To use a different type of css, since it is shared, we had to declare
+      a local variable on _nav.html.erb file -->
+    <%= render "shared/nav", location: 'top' %>
+
     <!-- Yield is where the page we go to loads into -->
     <%= yield %>
-
-    <!-- To use partials we must use render -->
-    <%= render "shared/nav" %>
+    
 
     <!-- this allows us to track the session source that came initially in the entire website -->
     <% if session[:source] %>

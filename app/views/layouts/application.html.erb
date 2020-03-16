@@ -17,7 +17,9 @@
 
     <!-- Make the nav bar available for all pages -->
     <!-- To use partials we must use render -->
-    <%= render "shared/nav" %>
+    <!-- To use a different type of css, since it is shared, we had to declare
+      a local variable on _nav.html.erb file -->
+    <%= render "shared/nav", location: 'top' %>
 
     <!--Check if the current_user is a Devise user class-->
     <% if current_user.is_a?(User) %>
