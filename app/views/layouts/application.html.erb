@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>TutorialCourse</title>
+    <title><%= @page_title %></title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <!-- Insert meta tags directly from application_controller -->
+    <meta name="keywords" content="<%= @seo_keywords %>"/>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
@@ -12,6 +14,16 @@
   <body>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
+
+    <!-- Make the nav bar available for all pages -->
+    <div>
+      <div><%= link_to "Home", root_path %></div>
+      <div><%= link_to "About", about_me_path %></div>
+      <div><%= link_to "Contact", contact_path %></div>
+      <div><%= link_to "Blog", blogs_path %></div>
+      <div><%= link_to "Portfolio", portfolios_path %></div>
+    </div>
+
     <!--Check if the current_user is a Devise user class-->
     <% if current_user.is_a?(User) %>
       <%= link_to "Logout", destroy_user_session_path, method: :delete %>
@@ -19,6 +31,8 @@
       <%= link_to "Login", new_user_session_path %>
       <%= link_to "Register", new_user_registration_path %>
     <% end %>
+
+    <!-- Yield is where the page we go to loads into -->
     <%= yield %>
 
     <!-- this allows us to track the session source that came initially in the entire website -->
