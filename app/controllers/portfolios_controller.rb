@@ -1,4 +1,5 @@
 class PortfoliosController < ApplicationController
+  layout "portfolio"
   def index
     #Portoflio.all returns all the portfolios
     #Portoflio.where(subtitle: 'Angular') would return only Angular items

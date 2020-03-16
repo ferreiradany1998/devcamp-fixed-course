@@ -1,5 +1,8 @@
 class BlogsController < ApplicationController
   before_action :set_blog, only: [:show, :edit, :update, :destroy, :toggle_status]
+  #It will go inside the layout directory and will search for blog
+  #The css file of blog must be declared in the assets.rb inside the config folder
+  layout "blog"
 
   # GET /blogs
   # GET /blogs.json
