@@ -1,6 +1,12 @@
 class PortfoliosController < ApplicationController
   before_action :set_portfolio_item, only: [:edit, :show, :update, :destroy]
   layout "portfolio"
+
+  #What actions we want everyone can access
+  #What can't a regular user do
+  #site_admin can do everything
+  access all: [:show, :index, :angular], user: {except: [:destroy, :new, :create, :update, :edit]}, site_admin: :all
+
   def index
     #Portoflio.all returns all the portfolios
     #Portoflio.where(subtitle: 'Angular') would return only Angular items
