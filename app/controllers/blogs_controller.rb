@@ -13,9 +13,9 @@ class BlogsController < ApplicationController
   # GET /blogs.json
   def index
     #binding.pry
-    @blogs = Blog.special_blogs
+    @blogs = Blog.page(params[:page]).per(5)
     #binding.pry
-    @blogs = Blog.featured_blogs
+    #@blogs = Blog.featured_blogs
     #binding.pry
 
     ##Puts Debugging
