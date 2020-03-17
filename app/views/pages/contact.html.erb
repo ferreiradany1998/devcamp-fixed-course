@@ -1,11 +1,29 @@
-<h1>Contact Page</h1>
-<p>Find me in app/views/pages/contact.html.erb</p>
+<h1>Would you like to work together?</h1>
+<hr>
+<div class="row">
+  <div class="col-md-6">
+    <h2>Office Address</h2>
+    <p>Via La Nav, 9 6705 Cresciano</p>
+    <h2>Phone</h2>
+    <p><%= number_to_phone "0765590406" %></p>
+    <h2>Email</h2>
+    <!-- Automatically open an email compose window with my contact as a receiver and PortfolioContact as the subject
+      of the email -->
+    <p><a href="mailto:ferreira.dany.1998@hotmail.com?subject=PortfolioContact" "email me">Email me</a></p>
+  </div>
+  <div class="col-md-6">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2757.273195085233!2d8.99774801600132!3d46.28454647911919!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47844d18868e3441%3A0xe7c8569c2a66a589!2sLa%20Nav%2C%206705%20Riviera!5e0!3m2!1sit!2sch!4v1584439082096!5m2!1sit!2sch" width="450" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+  </div>
+</div>
+
+
 
 <!-- Format a number into a phone number -->
-<p><%= number_to_phone "0765590406" %></p>
+<!--<p><%= number_to_phone "0765590406" %></p>-->
 <!-- format a number into currency -->
-<p><%= number_to_currency "1500"%></p>
+<!--<p><%= number_to_currency "1500"%></p>-->
 <!-- format a number into percentage -->
-<p><%= number_to_percentage "80"%></p>
+<!--<p><%= number_to_percentage "80"%></p>-->
 <!-- format a number with a delimiter -->
-<p><%= number_with_delimiter "5153978126573812" %></p>
+<!--<p><%= number_with_delimiter "5153978126573812" %></p>-->
+
