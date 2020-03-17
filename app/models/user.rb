@@ -15,4 +15,17 @@ class User < ApplicationRecord
   def last_name
     self.name.split.last
   end
+
+  #Example of how to get errors and manipulate them
+  #We should use it for communicating with APIs etc.
+  #We should not use them in our code, because it could be only a bad implementation
+  #We should use validations, guest user, etc.
+  def get_facebook_messages
+    begin
+      contacts_fb
+      @messages = retrieve_messages
+    rescue IOError => e
+      flash[:error] = "Error occured contacting Facebook: #{e}"
+    end
+  end
 end
