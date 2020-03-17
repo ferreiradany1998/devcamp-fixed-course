@@ -5,7 +5,7 @@ class PortfoliosController < ApplicationController
   #What actions we want everyone can access
   #What can't a regular user do
   #site_admin can do everything
-  access all: [:show, :index, :angular], user: {except: [:destroy, :new, :create, :update, :edit]}, site_admin: :all
+  access all: [:show, :index, :angular], user: {except: [:destroy, :new, :create, :update, :edit, :sort]}, site_admin: :all
 
   def index
     #Portoflio.all returns all the portfolios
