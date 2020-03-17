@@ -4,6 +4,11 @@ class BlogsController < ApplicationController
   #The css file of blog must be declared in the assets.rb inside the config folder
   layout "blog"
 
+  #What actions we want everyone can access
+  #What can't a regular user do
+  #site_admin can do everything
+  access all: [:show, :index], user: {except: [:destroy, :new, :create, :update, :edit]}, site_admin: :all
+
   # GET /blogs
   # GET /blogs.json
   def index

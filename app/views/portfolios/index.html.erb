@@ -1,6 +1,6 @@
 <h1>Portoflio items </h1>
 
-<%= link_to "Create New Item", new_portfolio_path %>
+<%= link_to "Create New Item", new_portfolio_path if logged_in?(:site_admin) %>
 
 <!-- This is a manual collection because we changed the naming
   of portfolios creating portfolio items. Blog works
