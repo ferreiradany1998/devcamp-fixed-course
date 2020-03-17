@@ -3,6 +3,7 @@ module ApplicationHelper
   #def sample_helper
    # "<p>My Helper</p>".html_safe
   #end
+  #Expect a parameter (style) and pass a default value if not set ""
   def login_helper style = ""
     #Check if the current_user is a Devise user class
     if current_user.is_a?(GuestUser) 
