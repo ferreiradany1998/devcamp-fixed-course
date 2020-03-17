@@ -162,27 +162,18 @@ body {
 }
 
 /*
- * Custom styles
+ * Custom Styles
  */
 
-.card-block {
+.card-body {
   color: black;
   text-align: left;
 }
 
-.auth-links a{
+.auth-links a {
   color: black;
 }
 
-.edit_user{
-  padding: 15px;
+.register-text {
+  text-align: right;
 }
-
-.card-title{
-  padding: 15px;
-}
-
-#cancelaccount{
-  padding: 15px 0px 0px 0px;
-}
-
