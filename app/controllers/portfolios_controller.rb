@@ -5,14 +5,22 @@ class PortfoliosController < ApplicationController
   #What actions we want everyone can access
   #What can't a regular user do
   #site_admin can do everything
-  access all: [:show, :index, :angular], user: {except: [:destroy, :new, :create, :update, :edit]}, site_admin: :all
+  access all: [:show, :index, :angular], user: {except: [:destroy, :new, :create, :update, :edit, :sort]}, site_admin: :all
 
   def index
     #Portoflio.all returns all the portfolios
     #Portoflio.where(subtitle: 'Angular') would return only Angular items
     #Instead of having Portoflio.where(subtitle: 'Angular') we can do it in the Portfolios class directly and use
     #only .angular in the controller
-    @portfolio_items = Portfolio.all
+    @portfolio_items = Portfolio.by_position#order("position ASC")
+  end
+
+  def sort 
+    params[:order].each do |key, value|
+      Portfolio.find(value[:id]).update(position: value[:position])
+    end
+
+    render nothing: true
   end
 
   def angular
