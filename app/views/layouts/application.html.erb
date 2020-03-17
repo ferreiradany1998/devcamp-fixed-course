@@ -14,22 +14,31 @@
   </head>
 
   <body>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+    <div class="site-wrapper">
+        <div class="site-wrapper-inner">
+            <div class="cover-container">
+                <!--<p class="notice"><%= notice %></p>
+                <p class="alert"><%= alert %></p>-->
 
-    <!-- Make the nav bar available for all pages -->
-    <!-- To use partials we must use render -->
-    <!-- To use a different type of css, since it is shared, we had to declare
-      a local variable on _nav.html.erb file -->
-    <%= render "shared/nav", location: 'top' %>
+                <!-- Make the nav bar available for all pages -->
+                <!-- To use partials we must use render -->
+                <!-- To use a different type of css, since it is shared, we had to declare
+                  a local variable on _nav.html.erb file -->
+                <!--<%= render "shared/nav", location: 'top' %>-->
 
-    <!-- the application will search for the helper in the helpers -->
-    <%= login_helper %>
+                <!-- BOOTSTRAP PARTIAL NAVBAR -->
+                <%= render "shared/application_nav" %>
 
-    <!-- Yield is where the page we go to loads into -->
-    <%= yield %>
+                <!-- the application will search for the helper in the helpers -->
+                <%= login_helper %>
 
-    <!-- this allows us to track the session source that came initially in the entire website -->
-    <%= source_helper("application") %>
+                <!-- Yield is where the page we go to loads into -->
+                <%= yield %>
+
+                <!-- this allows us to track the session source that came initially in the entire website -->
+                <%= source_helper("application") %>
+            </div>
+        </div>
+    </div>
   </body>
 </html>
