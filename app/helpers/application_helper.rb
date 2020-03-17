@@ -3,7 +3,7 @@ module ApplicationHelper
   #def sample_helper
    # "<p>My Helper</p>".html_safe
   #end
-  def login_helper(style)
+  def login_helper style = ""
     #Check if the current_user is a Devise user class
     if current_user.is_a?(GuestUser) 
       #Since these are method calls, ruby will skip the first one and only
