@@ -3,16 +3,16 @@ module ApplicationHelper
   #def sample_helper
    # "<p>My Helper</p>".html_safe
   #end
-  def login_helper
+  def login_helper(style)
     #Check if the current_user is a Devise user class
     if current_user.is_a?(GuestUser) 
       #Since these are method calls, ruby will skip the first one and only
       #Print the second one, so we must be careful and concatenate!
-      (link_to "Login", new_user_session_path) +
-      "<br>".html_safe + 
-      (link_to "Register", new_user_registration_path) 
+      (link_to "Login", new_user_session_path, class: style) +
+      " ".html_safe + 
+      (link_to "Register", new_user_registration_path, class: style) 
     else 
-      link_to "Logout", destroy_user_session_path, method: :delete 
+      link_to "Logout", destroy_user_session_path, method: :delete, class: style 
     end 
   end
 
