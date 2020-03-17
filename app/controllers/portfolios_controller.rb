@@ -12,7 +12,7 @@ class PortfoliosController < ApplicationController
     #Portoflio.where(subtitle: 'Angular') would return only Angular items
     #Instead of having Portoflio.where(subtitle: 'Angular') we can do it in the Portfolios class directly and use
     #only .angular in the controller
-    @portfolio_items = Portfolio.all
+    @portfolio_items = Portfolio.by_position#order("position ASC")
   end
 
   def angular
