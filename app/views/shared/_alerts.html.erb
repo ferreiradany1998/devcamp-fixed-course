@@ -1,10 +1,9 @@
 <!-- the flash gets set in the session -->
-<% if flash[:alert] %>
+<!-- OLD PARTIAL FOR ALERTS, GOT OPTIMIZED IN APPLICATION HELPER -->
+<!--<% if flash[:alert] %>
   <%= js add_gritter(flash[:alert], title: "Dany Coelho Ferreira Portfolio", sticky: false, time: 10000) %>
-<% end %>
 <% elsif flash[:error] %>
   <%= js add_gritter(flash[:error], title: "Dany Coelho Ferreira Portfolio", sticky: false, time: 10000) %>
-<% end %>
 <% else %>
   <%= js add_gritter(flash[:notice], title: "Dany Coelho Ferreira Portfolio", sticky: false, time: 10000) %>
-<% end %>
+<% end %>-->

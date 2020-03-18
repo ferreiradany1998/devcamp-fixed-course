@@ -2,7 +2,7 @@
 <%= form_for(@portfolio_item) do |form| %>
 <% if @portfolio_item.errors.any? %>
     <%= @portfolio_item.errors.full_messages.each do |error| %>
-      <%= js add_gritter(flash[:error], title: "Dany Coelho Ferreira Portfolio", sticky: false, time: 10000) %>
+       <%= alert_generator error %>
     <% end %>
   <% end %>
 <div class= "row">
