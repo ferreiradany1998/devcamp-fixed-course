@@ -16,6 +16,10 @@ class User < ApplicationRecord
   #They must specify a name before registering, otherwise they will run into an error on first_name, last_name methods
   validates_presence_of :name
 
+  #Dependent destroy allows us to delete all the blogs of the user
+  #If the user deletes his account
+  has_many :comments, dependent: :destroy
+
   def first_name
     #Grab the first piece of information before the space
     self.name.split.first

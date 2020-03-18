@@ -7,6 +7,10 @@ class Blog < ApplicationRecord
 
   belongs_to :topic, optional: true
 
+  #Dependent destroy allows us to delete all the blogs of the user
+  #If the user deletes his account
+  has_many :comments, dependent: :destroy
+
   def self.special_blogs
     all
   end
