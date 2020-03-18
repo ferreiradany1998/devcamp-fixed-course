@@ -19,6 +19,9 @@ Bundler.require(*Rails.groups)
 
 module TutorialCourse
   class Application < Rails::Application
+    #Tells the application: hey rails when you are starting up
+    #Insert into the config eager array the lib folder
+    config.eager_load_paths << "#{Rails.root}/lib"
     # If we want to acivate all parameters (not recommended)
     #config.action_controller.permit_all_parameters = true
     
