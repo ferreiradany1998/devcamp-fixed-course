@@ -1,6 +1,6 @@
 <!-- Set a data-id so that we can have an id for portfolios on javascript -->
 <div class="card" data-id="<%= portfolio_item.id %>">
-  <%= image_tag portfolio_item.thumb_image unless portfolio_item.thumb_image.nil? %>
+  <%= image_tag portfolio_item.thumb_image.to_s unless portfolio_item.thumb_image.nil? %>
   <p class="card-text">
     <span><%= link_to portfolio_item.title, portfolio_show_path(portfolio_item) %></span>
   <%= portfolio_item.subtitle %>
@@ -11,6 +11,6 @@
 
 
 <!--<p><%= portfolio_item.body %></p>-->
-<!--<%= image_tag portfolio_item.thumb_image unless portfolio_item.thumb_image.nil? %>
+<!--
 <%= link_to "Edit", edit_portfolio_path(portfolio_item) if logged_in?(:site_admin) %>
 <%= link_to "Destroy", portfolio_path(portfolio_item), method: :delete, data: { confirm: 'Are you sure?' } if logged_in?(:site_admin) %>-->
